@@ -1,0 +1,12 @@
+Course repository:
+	https://github.com/niekiran/Embedded-C/
+
+Download PPT of this course from here:
+	https://github.com/niekiran/Embedded-C/tree/master/ppt
+
+link to IDE:
+	https://www.st.com/en/development-tools/stm32cubeide.html
+
+ITM code:
+	https://github.com/niekiran/Embedded-C/blob/master/All_source_codes/target/itm_send_data.c
+
