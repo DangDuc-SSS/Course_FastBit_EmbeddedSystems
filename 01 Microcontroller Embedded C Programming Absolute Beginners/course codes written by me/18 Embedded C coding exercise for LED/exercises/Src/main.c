@@ -33,6 +33,25 @@
 
 int main(void)
 {
+	uint32_t *pClkCtrlReg = (uint32_t*)AHB1ENR;
+	uint32_t *pPortDModeReg = (uint32_t*)GPIOD_MODE;
+	uint32_t *pPortDOutputReg = (uint32_t*)GPIOD_OUTPUT;
+
+	// 1.enable the clock for GPIOD peripheral in the AHB1ENR
+	//uint32_t temp = *pClkctrlReg;	// read operation
+	//temp = temp | 0x08;	// modify
+	//*pClkCtrlReg = temp;	// write back
+	*pClkCtrlReg |= 0x08;
+
+	// 2.configure th mode of the IO pin as output
+	// 	a.clear the 24th and 25th bit positions (CLEAR)
+	*pPortDModeReg &= 0xFCFFFFFF;
+	//	b.make the 24th bit position as 1(SET)
+	*pPortDModeReg |= 0x01000000;
+
+	// 3.SET the 12th bit of the output dataregister to make I/O pin 12 as HIGH
+	*pPortDOutputReg |= 0x1000;
+
     /* Loop forever */
 	for(;;);
 }
