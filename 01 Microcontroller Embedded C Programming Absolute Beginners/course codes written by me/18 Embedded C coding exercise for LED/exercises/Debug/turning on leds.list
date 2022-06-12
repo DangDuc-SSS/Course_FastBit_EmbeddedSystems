@@ -108,7 +108,7 @@ int main(void)
  80001fe:	f043 0208 	orr.w	r2, r3, #8
  8000202:	68fb      	ldr	r3, [r7, #12]
  8000204:	601a      	str	r2, [r3, #0]
-	// 2.configure th mode of the IO pin as output
+	// 2.configure 12th mode of the IO pin as output
 	// 	a.clear the 24th and 25th bit positions (CLEAR)
 	//-------- first method --------//
 	//*pPortDModeReg &= 0xFCFFFFFF;

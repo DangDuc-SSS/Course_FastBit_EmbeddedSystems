@@ -16,6 +16,13 @@
  *
  ******************************************************************************
  */
+
+#include <stdint.h>
+
+#if !defined(__SOFT_FP__) && defined(__ARM_FP)
+  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
+#endif
+
 /**** Address of the Clock control register (AHB1ENR) ****/
 #define	AHB1ENR 0x40023830 // base address of RCC (register control clock) register (0x40023800) + offset of AHB1ENR reg (0x30) Address of the clock control register in which GIOD D enable bit is in it
 
@@ -25,11 +32,9 @@
 /**** Address of the GPIOD output data register (used to write) ****/
 #define GPIOD_OUTPUT 0x40020C14 // base address of GPIO D registers (0x40020C00) + offset of output register (0x14) -> make the mode of pin 12 (bit 24 to 1 & 25 to 0) so that we can use them as general purpose output
 
-#include <stdint.h>
 
-#if !defined(__SOFT_FP__) && defined(__ARM_FP)
-  #warning "FPU is not initialized, but the project is compiling for an FPU. Please initialize the FPU before use."
-#endif
+#include <stdio.h>
+void softwareDelay(uint32_t timeInMillis);
 
 int main(void)
 {
@@ -38,34 +43,24 @@ int main(void)
 	uint32_t *pPortDOutputReg = (uint32_t*)GPIOD_OUTPUT;
 
 	// 1.enable the clock for GPIOD peripheral in the AHB1ENR (Set the 3rd bit position)
-	//-------- first method --------//
-	//uint32_t temp = *pClkctrlReg;	// read operation
-	//temp = temp | 0x08;	// modify
-	//*pClkCtrlReg = temp;	// write back
-	//-------- second method --------//
-	//*pClkCtrlReg |= 0x08;
-	//-------- third method --------//
 	*pClkCtrlReg |= (1 << 3);
 
-	// 2.configure 12th mode of the IO pin as output
 	// 	a.clear the 24th and 25th bit positions (CLEAR)
-	//-------- first method --------//
-	//*pPortDModeReg &= 0xFCFFFFFF;
-	//-------- second method --------//
 	*pPortDModeReg &= ~(3 << 24);
-
 	//	b.make the 24th bit position as 1(SET)
-	//-------- first method --------//
-	//*pPortDModeReg |= 0x01000000;
-	//-------- second method --------//
 	*pPortDModeReg |= (1 << 24);
 
-	// 3.SET the 12th bit of the output dataregister to make I/O pin 12 as HIGH
-	//-------- first method --------//
-	//*pPortDOutputReg |= 0x1000;
-	//-------- second method --------//
-	*pPortDOutputReg |= (1 << 12);
+	// 3.for loop which toggles the led and then wait
+	while(1){
+		*pPortDOutputReg ^= (1 << 12);
+		softwareDelay(1000);
+	}
 
     /* Loop forever */
 	for(;;);
+}
+
+void softwareDelay(uint32_t timeInMillis)
+{
+	for(uint32_t i = 0;  i < timeInMillis * 1600 ; i++);
 }
