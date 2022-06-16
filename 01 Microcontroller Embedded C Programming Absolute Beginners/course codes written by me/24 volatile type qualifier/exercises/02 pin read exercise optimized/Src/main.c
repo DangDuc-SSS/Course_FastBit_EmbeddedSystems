@@ -41,12 +41,12 @@
 
 int main(void)
 {
-	uint32_t *pClkCtrlReg = (uint32_t*)AHB1ENR;
-	uint32_t *pPortDModeReg = (uint32_t*)GPIOD_MODE;
-	uint32_t *pPortDOutputReg = (uint32_t*)GPIOD_OUTPUT;
+	uint32_t volatile *pClkCtrlReg = (uint32_t*)AHB1ENR;
+	uint32_t volatile *pPortDModeReg = (uint32_t*)GPIOD_MODE;
+	uint32_t volatile *pPortDOutputReg = (uint32_t*)GPIOD_OUTPUT;
 
-	uint32_t *pPortAModeReg = (uint32_t*)GPIOA_MODE;
-	uint32_t  *pPortAInputtReg = (uint32_t*)GPIOA_OUTPUT;
+	uint32_t volatile *pPortAModeReg = (uint32_t*)GPIOA_MODE;
+	uint32_t volatile *pPortAInputtReg = (uint32_t*)GPIOA_OUTPUT;
 
 	// 1.enable the clock for GPIOD and GPIOA peripheral in the AHB1ENR (Set the 3rd bit position)
 	*pClkCtrlReg |= (1 << 3);

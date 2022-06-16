@@ -39,13 +39,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_macro  00000f82  00000000  00000000  000105d0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00000427  00000000  00000000  00011552  2**0
+ 18 .debug_line   00000429  00000000  00000000  00011552  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00003d0f  00000000  00000000  00011979  2**0
+ 19 .debug_str    00003d0f  00000000  00000000  0001197b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  00015688  2**0
+ 20 .comment      00000053  00000000  00000000  0001568a  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00000058  00000000  00000000  000156dc  2**2
+ 21 .debug_frame  00000058  00000000  00000000  000156e0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -101,7 +101,7 @@ int main(void)
 	uint32_t *pPortAModeReg = (uint32_t*)GPIOA_MODE;
  80001fa:	4b1f      	ldr	r3, [pc, #124]	; (8000278 <main+0x90>)
  80001fc:	60bb      	str	r3, [r7, #8]
-	uint32_t *pPortAInputtReg = (uint32_t*)GPIOA_OUTPUT;
+	uint32_t  *pPortAInputtReg = (uint32_t*)GPIOA_OUTPUT;
  80001fe:	4b1f      	ldr	r3, [pc, #124]	; (800027c <main+0x94>)
  8000200:	607b      	str	r3, [r7, #4]
 
