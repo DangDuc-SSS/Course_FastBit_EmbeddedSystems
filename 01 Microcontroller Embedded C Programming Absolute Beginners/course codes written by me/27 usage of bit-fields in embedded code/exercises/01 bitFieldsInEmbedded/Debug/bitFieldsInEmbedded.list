@@ -29,23 +29,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  12 .ARM.attributes 00000030  00000000  00000000  000103a4  2**0
                   CONTENTS, READONLY
- 13 .debug_info   00000533  00000000  00000000  000103d4  2**0
+ 13 .debug_info   00000551  00000000  00000000  000103d4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_abbrev 0000010a  00000000  00000000  00010907  2**0
+ 14 .debug_abbrev 00000118  00000000  00000000  00010925  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_aranges 00000050  00000000  00000000  00010a18  2**3
+ 15 .debug_aranges 00000050  00000000  00000000  00010a40  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_ranges 00000038  00000000  00000000  00010a68  2**3
+ 16 .debug_ranges 00000038  00000000  00000000  00010a90  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_macro  00000f80  00000000  00000000  00010aa0  2**0
+ 17 .debug_macro  00000f80  00000000  00000000  00010ac8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line   00000470  00000000  00000000  00011a20  2**0
+ 18 .debug_line   00000470  00000000  00000000  00011a48  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .debug_str    00003dec  00000000  00000000  00011e90  2**0
+ 19 .debug_str    00003dec  00000000  00000000  00011eb8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 20 .comment      00000053  00000000  00000000  00015c7c  2**0
+ 20 .comment      00000053  00000000  00000000  00015ca4  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00000084  00000000  00000000  00015cd0  2**2
+ 21 .debug_frame  00000084  00000000  00000000  00015cf8  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -89,95 +89,95 @@ int main(void)
  80001ea:	b084      	sub	sp, #16
  80001ec:	af00      	add	r7, sp, #0
 
-	RCC_AHB1ENR_t *pClkCtrlReg = (RCC_AHB1ENR_t*)AHB1ENR;
+	RCC_AHB1ENR_t volatile *const pClkCtrlReg = (RCC_AHB1ENR_t*)AHB1ENR;
  80001ee:	4b2e      	ldr	r3, [pc, #184]	; (80002a8 <main+0xc0>)
  80001f0:	60fb      	str	r3, [r7, #12]
-	GPIOx_MODE_t *pPortDModeReg = (GPIOx_MODE_t*)GPIOD_MODE;
+	GPIOx_MODE_t volatile *const pPortDModeReg = (GPIOx_MODE_t*)GPIOD_MODE;
  80001f2:	4b2e      	ldr	r3, [pc, #184]	; (80002ac <main+0xc4>)
  80001f4:	60bb      	str	r3, [r7, #8]
-	GPIOx_ODR_t *pPortDOutputReg = (GPIOx_ODR_t*)GPIOD_OUTPUT;
+	GPIOx_ODR_t volatile *const pPortDOutputReg = (GPIOx_ODR_t*)GPIOD_OUTPUT;
  80001f6:	4b2e      	ldr	r3, [pc, #184]	; (80002b0 <main+0xc8>)
  80001f8:	607b      	str	r3, [r7, #4]
 
 	// 1.enable the clock for GPIOD peripheral in the AHB1ENR (Set the 3rd bit position)
 	pClkCtrlReg->gpiod_en = 1;
  80001fa:	68fa      	ldr	r2, [r7, #12]
- 80001fc:	7813      	ldrb	r3, [r2, #0]
+ 80001fc:	6813      	ldr	r3, [r2, #0]
  80001fe:	f043 0308 	orr.w	r3, r3, #8
- 8000202:	7013      	strb	r3, [r2, #0]
+ 8000202:	6013      	str	r3, [r2, #0]
 
 	// 	a.clear the 24th and 25th bit positions (CLEAR)
 	pPortDModeReg->pin_12 = 1;
  8000204:	68ba      	ldr	r2, [r7, #8]
- 8000206:	78d3      	ldrb	r3, [r2, #3]
+ 8000206:	6813      	ldr	r3, [r2, #0]
  8000208:	2101      	movs	r1, #1
- 800020a:	f361 0301 	bfi	r3, r1, #0, #2
- 800020e:	70d3      	strb	r3, [r2, #3]
+ 800020a:	f361 6319 	bfi	r3, r1, #24, #2
+ 800020e:	6013      	str	r3, [r2, #0]
 	pPortDModeReg->pin_13 = 1;
  8000210:	68ba      	ldr	r2, [r7, #8]
- 8000212:	78d3      	ldrb	r3, [r2, #3]
+ 8000212:	6813      	ldr	r3, [r2, #0]
  8000214:	2101      	movs	r1, #1
- 8000216:	f361 0383 	bfi	r3, r1, #2, #2
- 800021a:	70d3      	strb	r3, [r2, #3]
+ 8000216:	f361 639b 	bfi	r3, r1, #26, #2
+ 800021a:	6013      	str	r3, [r2, #0]
 	pPortDModeReg->pin_14 = 1;
  800021c:	68ba      	ldr	r2, [r7, #8]
- 800021e:	78d3      	ldrb	r3, [r2, #3]
+ 800021e:	6813      	ldr	r3, [r2, #0]
  8000220:	2101      	movs	r1, #1
- 8000222:	f361 1305 	bfi	r3, r1, #4, #2
- 8000226:	70d3      	strb	r3, [r2, #3]
+ 8000222:	f361 731d 	bfi	r3, r1, #28, #2
+ 8000226:	6013      	str	r3, [r2, #0]
 	pPortDModeReg->pin_15 = 1;
  8000228:	68ba      	ldr	r2, [r7, #8]
- 800022a:	78d3      	ldrb	r3, [r2, #3]
+ 800022a:	6813      	ldr	r3, [r2, #0]
  800022c:	2101      	movs	r1, #1
- 800022e:	f361 1387 	bfi	r3, r1, #6, #2
- 8000232:	70d3      	strb	r3, [r2, #3]
+ 800022e:	f361 739f 	bfi	r3, r1, #30, #2
+ 8000232:	6013      	str	r3, [r2, #0]
 
 	// 3.for loop which toggles the led and then wait
 	while(1){
 		pPortDOutputReg->pin_12 ^= 1;
  8000234:	687b      	ldr	r3, [r7, #4]
- 8000236:	785b      	ldrb	r3, [r3, #1]
- 8000238:	f3c3 1300 	ubfx	r3, r3, #4, #1
+ 8000236:	681b      	ldr	r3, [r3, #0]
+ 8000238:	f3c3 3300 	ubfx	r3, r3, #12, #1
  800023c:	b2db      	uxtb	r3, r3
  800023e:	f083 0301 	eor.w	r3, r3, #1
  8000242:	b2d9      	uxtb	r1, r3
  8000244:	687a      	ldr	r2, [r7, #4]
- 8000246:	7853      	ldrb	r3, [r2, #1]
- 8000248:	f361 1304 	bfi	r3, r1, #4, #1
- 800024c:	7053      	strb	r3, [r2, #1]
+ 8000246:	6813      	ldr	r3, [r2, #0]
+ 8000248:	f361 330c 	bfi	r3, r1, #12, #1
+ 800024c:	6013      	str	r3, [r2, #0]
 		pPortDOutputReg->pin_13 ^= 1;
  800024e:	687b      	ldr	r3, [r7, #4]
- 8000250:	785b      	ldrb	r3, [r3, #1]
- 8000252:	f3c3 1340 	ubfx	r3, r3, #5, #1
+ 8000250:	681b      	ldr	r3, [r3, #0]
+ 8000252:	f3c3 3340 	ubfx	r3, r3, #13, #1
  8000256:	b2db      	uxtb	r3, r3
  8000258:	f083 0301 	eor.w	r3, r3, #1
  800025c:	b2d9      	uxtb	r1, r3
  800025e:	687a      	ldr	r2, [r7, #4]
- 8000260:	7853      	ldrb	r3, [r2, #1]
- 8000262:	f361 1345 	bfi	r3, r1, #5, #1
- 8000266:	7053      	strb	r3, [r2, #1]
+ 8000260:	6813      	ldr	r3, [r2, #0]
+ 8000262:	f361 334d 	bfi	r3, r1, #13, #1
+ 8000266:	6013      	str	r3, [r2, #0]
 		pPortDOutputReg->pin_14 ^= 1;
  8000268:	687b      	ldr	r3, [r7, #4]
- 800026a:	785b      	ldrb	r3, [r3, #1]
- 800026c:	f3c3 1380 	ubfx	r3, r3, #6, #1
+ 800026a:	681b      	ldr	r3, [r3, #0]
+ 800026c:	f3c3 3380 	ubfx	r3, r3, #14, #1
  8000270:	b2db      	uxtb	r3, r3
  8000272:	f083 0301 	eor.w	r3, r3, #1
  8000276:	b2d9      	uxtb	r1, r3
  8000278:	687a      	ldr	r2, [r7, #4]
- 800027a:	7853      	ldrb	r3, [r2, #1]
- 800027c:	f361 1386 	bfi	r3, r1, #6, #1
- 8000280:	7053      	strb	r3, [r2, #1]
+ 800027a:	6813      	ldr	r3, [r2, #0]
+ 800027c:	f361 338e 	bfi	r3, r1, #14, #1
+ 8000280:	6013      	str	r3, [r2, #0]
 		pPortDOutputReg->pin_15 ^= 1;
  8000282:	687b      	ldr	r3, [r7, #4]
- 8000284:	785b      	ldrb	r3, [r3, #1]
- 8000286:	f3c3 13c0 	ubfx	r3, r3, #7, #1
+ 8000284:	681b      	ldr	r3, [r3, #0]
+ 8000286:	f3c3 33c0 	ubfx	r3, r3, #15, #1
  800028a:	b2db      	uxtb	r3, r3
  800028c:	f083 0301 	eor.w	r3, r3, #1
  8000290:	b2d9      	uxtb	r1, r3
  8000292:	687a      	ldr	r2, [r7, #4]
- 8000294:	7853      	ldrb	r3, [r2, #1]
- 8000296:	f361 13c7 	bfi	r3, r1, #7, #1
- 800029a:	7053      	strb	r3, [r2, #1]
+ 8000294:	6813      	ldr	r3, [r2, #0]
+ 8000296:	f361 33cf 	bfi	r3, r1, #15, #1
+ 800029a:	6013      	str	r3, [r2, #0]
 		softwareDelay(1000);
  800029c:	f44f 707a 	mov.w	r0, #1000	; 0x3e8
  80002a0:	f000 f808 	bl	80002b4 <softwareDelay>

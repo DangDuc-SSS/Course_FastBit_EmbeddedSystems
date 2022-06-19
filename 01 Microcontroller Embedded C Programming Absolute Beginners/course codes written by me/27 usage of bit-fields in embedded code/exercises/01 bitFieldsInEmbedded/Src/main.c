@@ -38,9 +38,9 @@ void softwareDelay(uint32_t timeInMillis);
 int main(void)
 {
 
-	RCC_AHB1ENR_t *pClkCtrlReg = (RCC_AHB1ENR_t*)AHB1ENR;
-	GPIOx_MODE_t *pPortDModeReg = (GPIOx_MODE_t*)GPIOD_MODE;
-	GPIOx_ODR_t *pPortDOutputReg = (GPIOx_ODR_t*)GPIOD_OUTPUT;
+	RCC_AHB1ENR_t volatile *const pClkCtrlReg = (RCC_AHB1ENR_t*)AHB1ENR;
+	GPIOx_MODE_t volatile *const pPortDModeReg = (GPIOx_MODE_t*)GPIOD_MODE;
+	GPIOx_ODR_t volatile *const pPortDOutputReg = (GPIOx_ODR_t*)GPIOD_OUTPUT;
 
 	// 1.enable the clock for GPIOD peripheral in the AHB1ENR (Set the 3rd bit position)
 	pClkCtrlReg->gpiod_en = 1;

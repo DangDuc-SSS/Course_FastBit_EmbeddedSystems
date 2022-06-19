@@ -580,13 +580,13 @@ LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
 LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD c:/st/stm32cubeide_1.7.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.9-2020-q2-update.win32_2.0.0.202105311346/tools/bin/../lib/gcc/arm-none-eabi/9.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_info     0x0000000000000000      0x533
- .debug_info    0x0000000000000000      0x511 ./Src/main.o
- .debug_info    0x0000000000000511       0x22 ./Startup/startup_stm32f407vgtx.o
+.debug_info     0x0000000000000000      0x551
+ .debug_info    0x0000000000000000      0x52f ./Src/main.o
+ .debug_info    0x000000000000052f       0x22 ./Startup/startup_stm32f407vgtx.o
 
-.debug_abbrev   0x0000000000000000      0x10a
- .debug_abbrev  0x0000000000000000       0xf8 ./Src/main.o
- .debug_abbrev  0x00000000000000f8       0x12 ./Startup/startup_stm32f407vgtx.o
+.debug_abbrev   0x0000000000000000      0x118
+ .debug_abbrev  0x0000000000000000      0x106 ./Src/main.o
+ .debug_abbrev  0x0000000000000106       0x12 ./Startup/startup_stm32f407vgtx.o
 
 .debug_aranges  0x0000000000000000       0x50
  .debug_aranges
