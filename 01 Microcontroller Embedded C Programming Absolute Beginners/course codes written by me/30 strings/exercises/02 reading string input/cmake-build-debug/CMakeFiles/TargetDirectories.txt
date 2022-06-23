@@ -1,0 +1,3 @@
+C:/Users/abdo/Desktop/stm32CubeIDE workspace/clion work/string input/cmake-build-debug/CMakeFiles/string_input.dir
+C:/Users/abdo/Desktop/stm32CubeIDE workspace/clion work/string input/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/abdo/Desktop/stm32CubeIDE workspace/clion work/string input/cmake-build-debug/CMakeFiles/rebuild_cache.dir
