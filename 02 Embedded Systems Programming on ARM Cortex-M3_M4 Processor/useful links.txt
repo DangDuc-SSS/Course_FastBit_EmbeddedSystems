@@ -1,0 +1,8 @@
+Github repository:
+	https://github.com/niekiran/CortexMxProgramming
+
+Stm32CubeIDE:
+	https://www.st.com/en/development-tools/stm32cubeide.html
+
+ITM code:
+	https://github.com/niekiran/Embedded-C/blob/master/All_source_codes/target/itm_send_data.c
