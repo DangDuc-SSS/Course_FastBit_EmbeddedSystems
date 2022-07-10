@@ -1,0 +1,2 @@
+main.c:30:5:main	16	static
+main.c:44:6:USART3_IRQHandler	8	static
