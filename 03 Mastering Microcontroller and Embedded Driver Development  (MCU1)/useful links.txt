@@ -1,0 +1,14 @@
+Github repository:	
+	https://github.com/niekiran/MasteringMCU.git
+
+Board Details:
+	https://www.st.com/en/evaluation-tools/stm32f4discovery.html
+
+IDE:
+	https://www.st.com/en/development-tools/stm32cubeide.html
+
+ITM code:
+	https://github.com/niekiran/Embedded-C/blob/master/All_source_codes/target/itm_send_data.c
+
+BareMetal embedded:
+	https://www.youtube.com/playlist?list=PLERTijJOmYrDiiWd10iRHY0VRHdJwUH4g

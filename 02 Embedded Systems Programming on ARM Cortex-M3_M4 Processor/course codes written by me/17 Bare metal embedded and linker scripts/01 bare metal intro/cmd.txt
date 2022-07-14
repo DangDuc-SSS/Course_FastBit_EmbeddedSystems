@@ -1,0 +1,7 @@
+arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb main.c -o main.o -> generate object file
+arm-none-eabi-gcc -S -mcpu=cortex-m4 -mthumb main.c -o main.s -> generate assembly file
+arm-none-eabi-objdump.exe -d main.o>main_log -> disassemble .text section
+arm-none-eabi-objdump.exe -h main.o -> see headers of sections details like size
+arm-none-eabi-objdump.exe -D main.o>main_log -> get disassembly of all sections
+arm-none-eabi-gcc -nostdlib -T stm32_ls.ld main.o led.o stm32_startup.o -o final.elf -> for linking
+arm-none-eabi-objdump.exe -h final.elf -> analyzing headers of elf file

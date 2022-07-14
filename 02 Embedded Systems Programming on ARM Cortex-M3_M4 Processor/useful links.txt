@@ -6,3 +6,9 @@ Stm32CubeIDE:
 
 ITM code:
 	https://github.com/niekiran/Embedded-C/blob/master/All_source_codes/target/itm_send_data.c
+
+GCC manual:
+	https://gcc.gnu.org/onlinedocs/gcc-9.3.0/gcc/
+
+prototypes of exceptions:
+	https://github.com/niekiran/CortexMxProgramming/blob/master/Source_code/mcu_exception_handlr_prototypes
