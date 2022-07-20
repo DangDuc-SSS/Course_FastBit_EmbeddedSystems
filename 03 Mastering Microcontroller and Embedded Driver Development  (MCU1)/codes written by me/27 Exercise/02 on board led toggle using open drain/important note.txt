@@ -1,0 +1,1 @@
+you should add external pull up resistor as the internal pull up resistor is so high that a vert small current will flow

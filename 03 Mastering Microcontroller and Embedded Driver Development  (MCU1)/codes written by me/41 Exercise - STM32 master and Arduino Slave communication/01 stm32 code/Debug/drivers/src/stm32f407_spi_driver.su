@@ -1,0 +1,12 @@
+stm32f407_spi_driver.c:26:6:SPI_PeripheralClockControl	16	static
+stm32f407_spi_driver.c:77:6:SPI_PeripheralControl	16	static
+stm32f407_spi_driver.c:89:6:SPI_SSIConfig	16	static
+stm32f407_spi_driver.c:101:6:SPI_SSOEConfig	16	static
+stm32f407_spi_driver.c:129:6:SPI_Init	24	static
+stm32f407_spi_driver.c:195:6:SPI_DeInit	16	static
+stm32f407_spi_driver.c:211:9:SPI_GetFlagStatus	16	static
+stm32f407_spi_driver.c:234:6:SPI_SendData	24	static
+stm32f407_spi_driver.c:276:6:SPI_RecieveData	24	static
+stm32f407_spi_driver.c:297:6:SPI_IRQInterruptConfig	16	static
+stm32f407_spi_driver.c:318:6:SPI_IRQPriorityConfig	16	static
+stm32f407_spi_driver.c:339:6:SPI_IRQHandling	16	static
