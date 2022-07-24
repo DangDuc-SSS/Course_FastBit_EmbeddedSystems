@@ -1,0 +1,15 @@
+stm32f407_i2c_driver.c:34:6:I2C_PeripheralClockControl	16	static
+stm32f407_i2c_driver.c:69:10:RCC_GETPLLOutputClock	4	static
+stm32f407_i2c_driver.c:75:10:RCC_GetPCLK1Value	24	static
+stm32f407_i2c_driver.c:137:6:I2C_Init	24	static
+stm32f407_i2c_driver.c:217:6:I2C_DeInit	16	static
+stm32f407_i2c_driver.c:249:6:I2C_MAsterSendData	24	static
+stm32f407_i2c_driver.c:290:13:I2C_generateStartCondition	16	static
+stm32f407_i2c_driver.c:294:13:I2C_ExecuteAddressPhase	16	static
+stm32f407_i2c_driver.c:300:13:I2C_ClearADDRFlag	24	static
+stm32f407_i2c_driver.c:306:13:I2C_generateStopCondition	16	static
+stm32f407_i2c_driver.c:326:6:I2C_IRQInterruptConfig	16	static
+stm32f407_i2c_driver.c:382:7:I2C_IRQPriorityConfig	24	static
+stm32f407_i2c_driver.c:409:7:I2C_PeripheralControl	16	static
+stm32f407_i2c_driver.c:438:10:I2C_GetFlagStatus	16	static
+stm32f407_i2c_driver.c:462:7:I2C_ApplicationEventCallback	16	static

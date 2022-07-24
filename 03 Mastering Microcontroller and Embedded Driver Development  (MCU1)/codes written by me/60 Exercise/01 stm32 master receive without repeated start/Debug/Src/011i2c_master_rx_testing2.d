@@ -1,0 +1,16 @@
+Src/011i2c_master_rx_testing2.o: ../Src/011i2c_master_rx_testing2.c \
+ C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407xx.h \
+ C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h \
+ C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407xx.h \
+ C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407_spi_driver.h \
+ C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407_i2c_driver.h
+
+C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407xx.h:
+
+C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407xx_gpio_driver.h:
+
+C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407xx.h:
+
+C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407_spi_driver.h:
+
+C:/Users/abdo/Desktop/stm32CubeIDE\ workspace/stm32f4xx_drivers/drivers/inc/stm32f407_i2c_driver.h:
