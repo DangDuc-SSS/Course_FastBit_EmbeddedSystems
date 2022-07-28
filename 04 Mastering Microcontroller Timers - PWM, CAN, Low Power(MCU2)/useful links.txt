@@ -1,0 +1,8 @@
+Github repository:
+	https://github.com/niekiran/MasteringMCU2
+
+Board Description:
+	https://www.st.com/en/evaluation-tools/nucleo-f446re.html#design-scroll
+
+MCU Description:
+	https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html#design-scroll
