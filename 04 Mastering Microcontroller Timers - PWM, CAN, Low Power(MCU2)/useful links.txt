@@ -6,3 +6,7 @@ Board Description:
 
 MCU Description:
 	https://www.st.com/en/microcontrollers-microprocessors/stm32f446re.html#design-scroll
+
+CAN But Time Calculation:
+	http://www.bittiming.can-wiki.info/
+
