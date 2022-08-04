@@ -10,3 +10,5 @@ MCU Description:
 CAN But Time Calculation:
 	http://www.bittiming.can-wiki.info/
 
+Power calculation:
+	https://www.eembc.org/coremark/
