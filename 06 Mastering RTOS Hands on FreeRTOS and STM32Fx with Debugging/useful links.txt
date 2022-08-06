@@ -1,0 +1,3 @@
+course repository:
+	https://github.com/niekiran/MasteringRTOS
+
