@@ -1,3 +1,5 @@
 course repository:
 	https://github.com/niekiran/MasteringRTOS
 
+ITM code:
+	https://github.com/niekiran/Embedded-C/blob/master/All_source_codes/target/itm_send_data.c
